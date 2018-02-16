@@ -8,15 +8,15 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <script src="assets/javascript/game.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h1>
-                    Future Theme
+                    Star Wars Hangman
                 </h1>
             </div>
         </div>
@@ -25,20 +25,26 @@
 
             </div>
             <div class="col-6">
-                <p>
-                    Press any key to get started! 
+                    <button id="random-button" class="btn btn-primary btn-lg">
+                        <h1>
+                            Get Started
+                        </h1>
+                    </button>
+                    <p>
                     <br><br>
                     Wins= 
                     <br><br>
                     Current Word
                     <br> <br>
-                    _ _ _ _ _ _ _ 
+                    <div class="theWord">_ _ _ _ _ _ _ </div>
                     <br> <Br>
                     Number of Guesses Remaining
+                
                     <br> <br>
-
+                        <div class="guessesRemaining"></div>
                     <br><br>
                     Letters Already Guessed
+                        <div class="falsse">0</div>
                 </p>
             </div>
         </div>
