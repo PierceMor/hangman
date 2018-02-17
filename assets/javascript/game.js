@@ -16,7 +16,7 @@ var lettersUsed = [""];
 
 function computerChoice() {
 
-var randoo = Math.floor((Math.random() * words.length) + 1);
+var randoo = Math.floor((Math.random() * words.length) - 1);
 
     theWord = words[randoo];
 
@@ -28,13 +28,17 @@ computerChoice();
 
 //display current word in "Guesses"
 
-   //Answer Array
-   // answerWord = [];
-   //  for ( var i = 0; i < word.length; i++ ) {
-   //      answerWord[i] = "_"; 
-  //   }
+    //Answer Array
+   
+        
+   //   if (keyLogged.toUpperCase() === theWord[i]) {
+    //    document.write(theWord);
 
-  //   document.getElementById("theWord").innerHTML = answerWord.join(" ");
+
+
+ //   }}
+
+  //  document.getElementById("theWord").innerHTML = answerWord.join(" ");
 
    // document.onkeyup = function (event) {
   //      theWord = event.key.toUpperCase();
@@ -42,13 +46,29 @@ computerChoice();
 
 
         //IDK
-    document.addEventListener ("keyup", function(event) {
-      if ( event ===  ) {
-            
-            
-            console.log(event.key);
+    document.addEventListener ("keyup", function(event){ 
+
+        answerWord = event.key.toUpperCase(); 
+
         
+
+            if (theWord === (answerWord[i])) {
+
+                document.getElementById("writing").innerHTML = answerWord;
+            
+         //   else if (theWord)
+        
+        
+            console.log(answerWord);
     }});
+ 
+function showGuessesRemaining() {
+    document.getElementById("numGuesses").innerHTML = guessesRemaining;
+}
+    
+            
+        
+   // }});
         // broken loop
        // for (i in word; i < word.length; i++ );{}
 
