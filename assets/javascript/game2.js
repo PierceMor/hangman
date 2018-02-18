@@ -6,6 +6,8 @@ var wordList =   //word list
         'sith',
     ];
 
+//var olderGuesses = [];          // letters that have been guessed already
+
 const numberOfTries = 15;       // number of tries for guessing
 
 var usedLetters = [];           // Letters that users has already used 
@@ -23,6 +25,7 @@ function resetGame(){
 
         //round the random number to nearest whole
     currentWordIndex = Math.floor(Math.random() * (wordList.length));
+    console.log(wordList[currentWordIndex]);
 
     //clear arrays
     usedLetters = [];
@@ -33,21 +36,29 @@ function resetGame(){
         userGuess.push("_");
     }
 
-    //hide game over 
+    //NEED TO MAKE THE LETTERS COME ONTO THE SCREEN YOU DERP!!
     
-console.log(event)
+
 
     //show display
     updateDisplay();
 };
 
 // Updates the dsplaz on the HTML Page 
-function updateDisplay() {
+function updateDisplay() {console.log("we are here")
     document.getElementById("totalWins").innerText = wins;
     document.getElementById("currentWord").innerText = "";
     for (var i = 0; i < userGuess.length; i++) {
-        document.getElementById("currentWord").innerText += userGuess[i];
+
+        //checks to see if that letter is in usedLetters
+        if (usedLetters.includes(wordList[currentWordIndex][i])) {
+            document.getElementById("currentWord").innerText += wordList[currentWordIndex][i];
+        } else {  document.getElementById("currentWord").innerText += "_";
+
+        }
+     //   document.getElementById("currentWord").innerText += userGuess[i];
     }
+
     if(remainingGuesses <= 0) {
         
         hasFinished = true;
@@ -63,11 +74,14 @@ document.onkeydown = function(event) {
         //check to make sure a letter was pressed. 
         if(event.keyCode >= 65 && event.keyCode <= 90){
             makeGuess(event.key.toLowerCase());
+            console.log("aftermakeGuesses");
         }
     }
+    
+   
 };
 
-console.log(event)
+
 
 function makeGuess(letter) {
     if (remainingGuesses > 0) {
@@ -110,9 +124,12 @@ function evaluateGuess(letter) {
     }
 };
 
+
+
 function checkWin() {
     if(userGuess.indexOf("_") === -1) {
         wins++;
         hasFinished = true;
     }
 };
+
